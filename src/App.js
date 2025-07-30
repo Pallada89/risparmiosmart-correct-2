@@ -1,13 +1,9 @@
-import React from 'react';
-import './App.css';
-
 function App() {
   return (
-    <div className="app">
+    <div style={{ padding: "2rem", fontFamily: "Arial" }}>
       <h1>RisparmioSmart</h1>
-      <p>App base React pronta per Vercel</p>
+      <p>L'app funziona!</p>
     </div>
   );
 }
-
 export default App;
