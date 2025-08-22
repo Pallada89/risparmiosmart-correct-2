@@ -42,7 +42,11 @@ async def ocr_endpoint(
         )
         db.add(db_offer)
     db.commit()
-    return {"text": text, "offers_extracted": len(offers)}
+    return {
+    "text": text,
+    "offers_extracted": len(offers),
+    "offers": [o.model_dump() for o in offers]
+}
 
 @router.post("/offers", response_model=OfferRead)
 def create_offer(payload: OfferCreate, db: Session = Depends(get_db)):
